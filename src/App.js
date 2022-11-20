@@ -25,6 +25,7 @@ class App extends Component {
     };
   }
 
+  // QUERY QUESTIONS FROM DJANGO API BACKEND
   componentDidMount() {
     this.refreshList();
   }
@@ -39,10 +40,12 @@ class App extends Component {
       });
   };
 
+  // show create question modal
   toggle = () => {
     this.setState({ modal: !this.state.modal });
   };
 
+  // create or update question
   handleSubmit = (item) => {
     this.toggle();
 
@@ -63,6 +66,7 @@ class App extends Component {
       });
   };
 
+  // delete question
   handleDelete = (item) => {
     axios
       .delete(`/api/questions/${item.id}/`)
@@ -101,7 +105,6 @@ class App extends Component {
                 <Col>{this.renderItems()}</Col>
                 <Col md="auto">
                   <About />
-
                   <TopExperts />
                 </Col>
               </Row>
