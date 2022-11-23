@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
+import ProfileSection from "./ProfileSection";
 
 function TopExperts() {
   return (
@@ -10,47 +11,20 @@ function TopExperts() {
         marginLeft: "8px",
       }}
     >
-      <Card style={{ width: "280px" }}>
+      <Card style={{ width: "280px", borderRadius: "25px" }}>
         <Card.Body>
           <Card.Title>Top Experts</Card.Title>
 
-          <Row
-            style={{ display: "flex", alignItems: "center", marginLeft: "0px", marginBottom: "8px" }}
-          >
-            <Card.Img
-              src="https://i.pravatar.cc/320"
-              style={{ width: "50px", height: "50px", borderRadius: "20%" }}
-              alt="Card image"
-            />
-            <Card.Text style={{ fontSize: "12px", marginLeft: "8px" }}>
-              Arturo Bravo
-            </Card.Text>
+          <Row>
+            <ProfileSection username={"Arturo Bravo"} imageSize={"310"} />
           </Row>
 
-          <Row
-            style={{ display: "flex", alignItems: "center", marginLeft: "0px", marginBottom: "8px" }}
-          >
-            <Card.Img
-              src="https://i.pravatar.cc/340"
-              style={{ width: "50px", height: "50px", borderRadius: "20%" }}
-              alt="Card image"
-            />
-            <Card.Text style={{ fontSize: "12px", marginLeft: "8px" }}>
-              Ash Katchup
-            </Card.Text>
+          <Row style={{ marginTop: "12px" }}>
+            <ProfileSection username={"Ash Katchup"} imageSize={"320"} />
           </Row>
 
-          <Row
-            style={{ display: "flex", alignItems: "center", marginLeft: "0px", marginBottom: "8px" }}
-          >
-            <Card.Img
-              src="https://i.pravatar.cc/360"
-              style={{ width: "50px", height: "50px", borderRadius: "20%" }}
-              alt="Card image"
-            />
-            <Card.Text style={{ fontSize: "12px", marginLeft: "8px" }}>
-              Naruto Usumaki
-            </Card.Text>
+          <Row style={{ marginTop: "12px" }}>
+            <ProfileSection username={"Naruto Usumaki"} imageSize={"330"}/>
           </Row>
         </Card.Body>
       </Card>

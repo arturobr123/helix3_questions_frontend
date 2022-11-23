@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import ProfileSection from "./ProfileSection";
 
 function Question({ questionObject }) {
   return (
@@ -10,37 +11,56 @@ function Question({ questionObject }) {
         marginBottom: "12px",
       }}
     >
-      <Card style={{ width: "100%" }}>
+      <Card style={{ width: "100%", borderRadius: "25px" }}>
         <Card.Body>
-          <Card.Title>{questionObject.title}</Card.Title>
-          <Card.Text>{questionObject.text}</Card.Text>
+          <Card.Title
+            style={{
+              fontFamily: "Poppins",
+              fontStyle: "normal",
+              fontWeight: 700,
+              fontSize: "16px",
+              lineHeight: "24px",
+              color: "#34324C",
+            }}
+          >
+            {questionObject.title}
+          </Card.Title>
+          <Card.Text
+            style={{
+              fontFamily: "Poppins",
+              fontStyle: "normal",
+              fontWeight: 400,
+              fontSize: "16px",
+              lineHeight: "24px",
+            }}
+          >
+            {questionObject.text}
+          </Card.Text>
         </Card.Body>
 
+        <div
+          style={{
+            marginLeft: "16px",
+            width: "90%",
+            height: " 1px",
+            borderBottom: "1px solid #DEDEDE",
+          }}
+        ></div>
+
         <Card.Body>
-          <Card.Text style={{ fontSize: "12px" }}>Ask by:</Card.Text>
-
-          <Row
-            style={{ display: "flex", alignItems: "center", marginLeft: "0px" }}
+          <Card.Text
+            style={{
+              fontSize: "16px",
+              color: "#34324C",
+              fontFamily: "Poppins",
+              fontWeight: 700,
+              lineHeight: "24px",
+            }}
           >
-            <Card.Img
-              src="https://i.pravatar.cc/300"
-              style={{ width: "50px", height: "50px",  borderRadius: "20%" }}
-              alt="Card image"
-            />
+            Asked by:
+          </Card.Text>
 
-            <Col>
-              <Card.Text style={{ fontSize: "12px" }}>
-                Arturo Bravo
-              </Card.Text>
-              <Card.Text
-                style={{
-                  fontSize: "10px",
-                }}
-              >
-                2 questions - 1 answer
-              </Card.Text>
-            </Col>
-          </Row>
+          <ProfileSection username={"Arturo Bravo"} imageSize={"300"}/>
         </Card.Body>
       </Card>
     </Row>

@@ -31,13 +31,21 @@ export default class CustomModal extends Component {
     const { toggle, onSave } = this.props;
 
     return (
-      <Modal isOpen={true} toggle={toggle}>
-        <ModalHeader toggle={toggle}>New Question</ModalHeader>
+      <Modal style={{}} isOpen={true} toggle={toggle}>
+        <ModalHeader style={{
+              fontFamily: "'Rubik'",
+              fontStyle: "normal",
+              fontWeight: 700,
+              fontSize: "20px",
+              lineHeight: "28px",
+              color: "#34324C",
+            }} toggle={toggle}>New Question</ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>
               <Label for="question-title">Title</Label>
               <Input
+                style={{borderRadius: "25px"}}
                 type="text"
                 id="question-title"
                 name="title"
@@ -49,7 +57,8 @@ export default class CustomModal extends Component {
             <FormGroup>
               <Label for="question-text">Description</Label>
               <Input
-                type="text"
+                style={{borderRadius: "25px", height: "120px"}}
+                type="textarea"
                 id="question-text"
                 name="text"
                 value={this.state.activeItem.text}
@@ -61,7 +70,17 @@ export default class CustomModal extends Component {
         </ModalBody>
         <ModalFooter>
           <Button
-            color="success"
+            style={{
+              borderColor: "#FFFFFF",
+              color: "#FFFFFF",
+              backgroundColor: "#6074DD",
+              borderRadius: "25px",
+              padding: "8px",
+              paddingLeft: "24px",
+              paddingRight: "24px",
+              fontSize: "12px",
+            }}
+            size="lg"
             onClick={() => onSave(this.state.activeItem)}
           >
             Save
